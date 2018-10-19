@@ -3570,6 +3570,9 @@ void usage(void) {
     fprintf(stderr,"       ./redis-server --port 7777\n");
     fprintf(stderr,"       ./redis-server --port 7777 --slaveof 127.0.0.1 8888\n");
     fprintf(stderr,"       ./redis-server /etc/myredis.conf --loglevel verbose\n\n");
+#ifdef USE_NVM
+    fprintf(stderr,"       ./redis-server --nvm-dir /mnt/pmem0 --nvm-capacaity 1\n\n");
+#endif
     fprintf(stderr,"Sentinel mode:\n");
     fprintf(stderr,"       ./redis-server /etc/sentinel.conf --sentinel\n");
     exit(1);
